@@ -30,7 +30,9 @@
     "build": "node scripts/build.js",
     "test": "node --test",
     "prepare": "node scripts/build.js",
-    "prepublishOnly": "npm test && npm run build"
+    "preversion": "npm run build && npm test",
+    "version": "npm publish",
+    "postversion": "git push --no-verify && git push --tags --no-verify"
   },
   "keywords": [
     "known",

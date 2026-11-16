@@ -81,3 +81,6 @@ npm test
 
 `src/index.js` is the whole package. `npm run build` writes the ES module and
 CommonJS files to `dist/`, and runs on install and before publishing.
+
+A release is one command: `npm version patch` (or `minor`, `major`). It runs
+the tests, publishes to npm, then commits, tags and pushes.
