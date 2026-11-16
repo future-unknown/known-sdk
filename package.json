@@ -1,0 +1,52 @@
+{
+  "name": "@future-unknown/known-sdk",
+  "version": "0.1.0",
+  "description": "The Known API client: JSON-RPC calls to Known with the address already set. Works in browsers, Node, and CLIs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future-unknown/known-sdk.git"
+  },
+  "homepage": "https://known.info",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test",
+    "prepare": "node scripts/build.js",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "keywords": [
+    "known",
+    "sdk",
+    "client",
+    "json-rpc",
+    "rpc"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@future-unknown/methodry": "^0.6.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
